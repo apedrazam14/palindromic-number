@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+ <html>
+<head>
+    <title> Numero Palindromo </title>
+    <meta charset ="utf-8"/>
+    <link rel="stylesheet" href="index.css">
+
+</head>
+ <body>
+ <p class='Title'>Numero palindromo</p>
+ <p class='Number'>Por favor, introduce el número del cual obtendras la base en la cual dicho numero es palindromo, recuerda ingresarlo en base decimal:</p>
+ <input type="text" name="numero1" id="Numero_In" >
+ <button type="button" class="boton" onclick="palindromo()">Verificar</button>
+
+
+ <script>
+
+
+    function palindromo (){
+    var Numero_In = document.getElementById('Numero_In').value;
+    var Numero_aux = Numero_In; 
+    var Base=2;
+    var i=0;
+    var Residuo = [];
+    var Numero_String ;
+    var Bandera= false;
+    var Bandera2 = false;
+    if (Numero_In == []){
+        Bandera = true;
+        Bandera2 = true;
+        alert ("No hay datos")
+    } else {
+        Numero_In=Numero_In.split("");
+        Numero_In.forEach(Caracter => {
+        if ((Caracter < 48) || (Caracter > 57)) {
+            Bandera = false;
+            
+        }else{
+            
+            Bandera=true;
+        }
+    });
+    }
+    
+    if(Bandera==true && Bandera2==false){
+        alert("Datos incorrectos, ingrese numeros en base decimal");
+    }
+    
+
+    Numero_In = document.getElementById('Numero_In').value;
+    while((Base< 100000) && (Bandera == false)) {
+            if(Numero_In>=Base){
+                Residuo[i] = Numero_In % Base;
+                Numero_In = Math.trunc(Numero_In/Base);
+                i++;
+            }
+            else{
+                Residuo[i] = Numero_In;
+                Numero_String = Residuo.join('');
+                Residuo = Residuo.reverse();
+                Residuo= Residuo.join('');
+                
+                
+
+                if(Residuo == Numero_String ){
+                   Bandera=true; 
+                   document.write("Base:" + Base + "<br/>");                   
+                   document.write("Numero Convertido: "+ Residuo+ " <br/> Numero Inverso: ", Numero_String);
+                }
+                
+
+                Numero_String = Numero_String.split('');
+                Residuo = Residuo.split();
+                i=0;
+                for(let p=Residuo.length;p>0;p--)
+                {
+                    Residuo.pop();
+                    Numero_String.pop();
+                    
+                }
+
+                Base++;
+                Numero_In = Numero_aux;
+            }
+         }   
+    
+}
+
+ </script>
+ </body>
+
+ <footer>
+    <p class='Nombres'>Eduard Felipe Ortegon Correa - Alisson Jhojana Pedraza Mesa - Lina Paola Ticora Razmirez</p>
+    <p class='Materia'>Multisim: Internet of Things (IoT) as a PCB design </p>
+ </footer>

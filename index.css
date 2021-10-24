@@ -1,0 +1,47 @@
+body{
+    margin:0;
+    padding:0;
+}
+.Title{
+    
+    color:#E9C23F;
+    font-family: 'Lora', serif;
+    font-weight: bold;
+    border-bottom: 2px #E9C23F solid;
+    font-size: 6.5mm;
+    text-align: center;
+}
+.Number{
+    color: black ;
+    font-family: 'Open Sans Condensed', sans-serif;   
+    font-size: 3mm;
+}
+.boton{
+    text-decoration: none;
+    padding: 3px;
+    font-weight: 200;
+    font-size: 10px;
+    color:black;
+    background-color: #fffd7c;
+    border-radius: 6px;
+    border: 2px solid#E9C23F;
+  }
+  .boton:hover{
+    color: #fdf147;
+    background-color: #ffffff;
+  }
+  .Nombres{    
+    color:#000000;
+    font-family: 'Lora', serif;
+    font-weight: bold;
+    border-top: 2px #E9C23F solid;
+    font-size: 2mm;
+    text-align: right;
+}
+.Materia{    
+    color:#000000;
+    font-family: 'Lora', serif;
+    font-weight: bold;
+    font-size: 2mm;
+    text-align: right;
+}
